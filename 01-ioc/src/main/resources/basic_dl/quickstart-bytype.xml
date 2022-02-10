@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--可用于bytype-->
     <bean class="com.example.spring.basic_dl.b_bytype.bean.Person"></bean>
 
+    <!--可用于byname-->
     <bean id="demoDao" class="com.example.spring.basic_dl.b_bytype.dao.impl.DemoDaoImpl"></bean>
 </beans>

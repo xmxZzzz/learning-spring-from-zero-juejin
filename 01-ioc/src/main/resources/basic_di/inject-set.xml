@@ -12,6 +12,7 @@
     <bean id="cat" class="com.example.spring.basic_di.a_quickstart_set.bean.Cat">
         <property name="name" value="麦芽"></property>
         <property name="type" value="狸花"></property>
+        <!--引入person的id-->
         <property name="master" ref="person"></property>
     </bean>
 
