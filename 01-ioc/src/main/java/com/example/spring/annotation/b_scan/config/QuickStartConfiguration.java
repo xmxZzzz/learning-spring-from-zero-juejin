@@ -1,5 +1,7 @@
 package com.example.spring.annotation.b_scan.config;
 
+import com.example.spring.annotation.b_scan.bean.Cat;
+import com.example.spring.annotation.b_scan.bean.Person;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 

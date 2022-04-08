@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--当bean中没有无参构造方法时，可以使用constructor-arg 标签实现属性注入-->
+    <bean id="person" class="com.example.spring.basic_di.b_constructor.bean.Person">
+        <constructor-arg name="name" value="tom"></constructor-arg>
+        <constructor-arg name="gender" value="男"></constructor-arg>
+    </bean>
+
+
+</beans>

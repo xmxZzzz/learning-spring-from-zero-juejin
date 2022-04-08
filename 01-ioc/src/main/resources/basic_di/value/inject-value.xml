@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--&lt;!&ndash;开启组件扫描&ndash;&gt;-->
+    <context:component-scan base-package="com.example.spring.basic_di.c_value_spel.bean"></context:component-scan>
+
+    <!--开启properties的占位符-->
+    <context:property-placeholder location="classpath:basic_di/value/red.properties"/>
+
+    <bean id="red" class="com.example.spring.basic_di.c_value_spel.bean.Red">
+        <property name="name" value="${red.name}"/>
+        <property name="order" value="${red.order}"/>
+    </bean>
+
+    <bean id="blue" class="com.example.spring.basic_di.c_value_spel.bean.Blue">
+        <property name="name" value="#{'blue-value-byspel'}"/>
+        <property name="order" value="#{2}"/>
+    </bean>
+
+    <bean id="green" class="com.example.spring.basic_di.c_value_spel.bean.Green">
+        <property name="name" value="#{'copy of '+blue.name}"/>
+        <property name="order" value="#{blue.order+1}"/>
+    </bean>
+
+    <bean id="white" class="com.example.spring.basic_di.c_value_spel.bean.White">
+        <property name="name" value="#{blue.name.substring(0,3)}"/>
+        <property name="order" value="#{T(Integer).MAX_VALUE}"/>
+    </bean>
+</beans>

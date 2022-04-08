@@ -1,0 +1,36 @@
+package com.example.spring.basic_di.b_constructor.bean;
+
+public class Person {
+    private String name;
+    private String gender;
+
+    // 声明有参构造方法，表示没有构造方法
+    public Person(String name, String gender) {
+        this.name=name;
+        this.gender=gender;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+}
