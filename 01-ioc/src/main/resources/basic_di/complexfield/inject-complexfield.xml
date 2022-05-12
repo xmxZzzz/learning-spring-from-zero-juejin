@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mimi" class="com.example.spring.basic_di.e_complexfield.bean.Cat"></bean>
+
+    <bean class="com.example.spring.basic_di.e_complexfield.bean.Person">
+        <!--数组注入-->
+        <property name="names">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+            </array>
+        </property>
+        <!--List注入-->
+        <property name="tels">
+            <list>
+                <value>123</value>
+                <value>456</value>
+            </list>
+        </property>
+        <!--Set注入-->
+        <property name="cats">
+            <set>
+                <!--方式一-->
+                <ref bean="mimi"></ref>
+                <!--方式二-->
+                <!--<bean id="mimi" class="com.example.spring.basic_di.e_complexfield.bean.Cat"></bean>-->
+            </set>
+        </property>
+        <!--Map注入-->
+        <property name="events">
+            <map>
+                <entry key="8:00" value="起床"></entry>
+                <entry key="9:00" value-ref="mimi"></entry>
+                <entry key="14:00">
+                    <bean id="mimi" class="com.example.spring.basic_di.e_complexfield.bean.Cat"></bean>
+                </entry>
+            </map>
+        </property>
+        <!--Properties注入-->
+        <property name="props">
+            <props>
+                <prop key="sex">男</prop>
+                <prop key="age">20</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

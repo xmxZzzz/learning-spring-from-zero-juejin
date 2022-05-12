@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @Description: 自动注入的三种方式：@Autowired、构造器注入、setter注入
  * @Author: 10195
@@ -23,8 +25,11 @@ public class Dog {
 
     private Person1 person1;
 
-    public Dog(){
-    }
+    @Autowired
+    private List<Person> personList;
+
+    // public Dog(){
+    // }
 
     // 方式二：构造器注入
     // @Autowired
@@ -69,12 +74,21 @@ public class Dog {
         this.person1 = person1;
     }
 
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
+    }
+
     @Override
     public String toString() {
         return "Dog{" +
                 "name='" + name + '\'' +
                 ", person=" + person +
                 ", person1=" + person1 +
+                ", personList=" + personList +
                 '}';
     }
 }

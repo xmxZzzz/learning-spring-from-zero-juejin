@@ -19,17 +19,17 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan(basePackages = "com.example.spring.basic_di.d_autowired.bean")
 public class AutowiredConfiguration {
 
-    @Bean
-    @Autowired  // 高版本可不标注
-    public Cat cat(Person person){
-        Cat cat = new Cat();
-        cat.setName("cat");
-        cat.setPerson(person);
-        return cat;
-    }
+    // @Bean
+    // @Autowired  // 高版本可不标注
+    // public Cat cat(Person person){
+    //     Cat cat = new Cat();
+    //     cat.setName("cat");
+    //     cat.setPerson(person);
+    //     return cat;
+    // }
 
-    @Bean
     // @Primary
+    @Bean
     public Person master(){
         Person master = new Person();
         master.setName("master");

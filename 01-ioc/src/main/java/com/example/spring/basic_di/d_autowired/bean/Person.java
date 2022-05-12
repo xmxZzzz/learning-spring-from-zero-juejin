@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
  * @Author: 10195
  * @Date 2022/4/8 14:05
  */
+@Component
 // @Component("administrator")
 public class Person {
 
